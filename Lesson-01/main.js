@@ -9,30 +9,30 @@ const globalFirst = oldFirst,
     globalThird = 100500;
 
 let primary = 100,
-    secondary = -100,
+    secondary = 99,
     result;
 
 // Task-01
 // Из двух чисел с разной четностью вывести на экран нечетное число.
 let result1;
 
-    if (primary < 0) {
+    if (primary % 2 != 0) {
         result1 = primary
-    } else if (secondary < 0) {
+    } else if (secondary % 2 != 0) {
         result1 = secondary
     } else {
-        result1 = "All numbers > 0"
+        result1 = "All numbers are even"
     }
 
-console.log('Negative number:', result1);
+console.log('Odd number:', result1);
 
 // Task-02
 // Определить количество дней в году, который вводит пользователь.
 let year = 2020,
-    tempVar1 = year%4,
-    tempVar2 = year%400;
+    tempVar1 = year % 4,
+    tempVar2 = year % 400;
 
-    if ( tempVar1!=0 && tempVar1!=0) {
+    if ( tempVar1 != 0 && tempVar1 != 0) {
         result2 = 'NORMAL'
     } else {
         result2 = "LEAP"
