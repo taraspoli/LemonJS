@@ -1,3 +1,4 @@
+'use strict';
 // Task-00
 // Составить расписание на неделю.
 let day = prompt('Put day number', ''),
@@ -71,7 +72,7 @@ let $max = 59,
 if ($min > $max) {
     result2 = 'Put number from 0 till 59'
 } else {
-    for (let i = 0; i >= $max; i++) {
+    for (let i = 0; i <= $max; i++) {
         if ($min >= 0 && $min < 15) {
             result2 = 'First quarter'
         } else if ($min >= 15 && $min < 30) {
@@ -85,3 +86,112 @@ if ($min > $max) {
 }
 
 console.log(result2);
+
+// Task-03
+// Переменная $num может принимать одно из значений: 1, 2, 3 или 4. Если она имеет значение '1', то в переменную $result запишем 'зима', если имеет значение '2' – 'лето' и так далее
+
+let $num = Number(prompt('Put season from 1 till 4', '')),
+    $result;
+
+if ($num > 4) {
+    $result = 'In year only 4 seasons'
+} else {
+    for (let i = 0; i <= 4; i++) {
+        switch (code) {
+            case 1:
+                $result = 'Winter'
+                break;
+            case 2:
+                $result = 'Spring';
+                break;
+            case 3:
+                $result = 'Summer';
+                break;
+            case 4:
+                $result = 'Autumn';
+                break;
+
+            default:
+                $result = 'In year only 4 seasons';
+                break;
+        }
+    }
+}
+
+console.log($result);
+
+// Task-04
+// a. Площадь прямоугольника
+
+let height = 23,
+    width = 10,
+    s = height * width;
+
+// b. Объем цилиндра 
+let heightC = 10,
+    dC = 4,
+    rC = dC / 2,
+    v = Math.PI * (rC ** 2) * heightC;
+
+//c. Гипотенуза треугольника
+let n = 3,
+    m = 4,
+    k = Math.sqrt(n ** 2 + m ** 2);
+
+//d. Ряд Фибоначчи
+let nFib = 12,
+    el,
+    a = 1,
+    b = 1;
+
+for (let i = 3; i <= nFib; i++) {
+    let c = a + b;
+    a = b;
+    b = c;
+}
+
+el = b;
+
+//e. Переплату по кредиту
+let S = 2e6,
+    p = 0.1,
+    years = 5,
+    month = years * 12,
+    pReal = p / 12,
+    temp = Math.pow((1 + pReal), month),
+    payPerMonth = S * ((pReal * temp) / (temp - 1)),
+    perepl = (payPerMonth * month) - S;
+
+
+console.log(
+    'Rectangle: ' + s + 'sm;\n' +
+    'Cylinder: ' + v.toFixed(2) + 'sm;\n' +
+    'Rectangle: ' + k + 'sm;\n' +
+    'Fibonacci: ' + el + '\n' +
+    'Credit: ' + perepl.toFixed(2) + '$');
+
+// Task-05
+// Все числа от 45 до 67
+let i = a = 45;
+
+// while (i <= 67) {
+//     console.log(i);
+//     i++;
+// }
+
+// while (a <= 670) {
+//     if (a%10===0) {
+//         console.log(a);
+//     }
+//     a++;
+// }
+
+for (let i = 45; i <= 67; i++) {
+    console.log(i);
+}
+
+for (let a = 45; a <= 670; a++) {
+    if (a % 10 === 0) {
+        console.log(a);
+    }
+}
